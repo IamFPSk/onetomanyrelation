@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th = "http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Create New Category</title>
+<link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}" />
+</head>
+<body>
+	<div class="container text-center">
+		<h1>Create New Category</h1>
+	<form th:action="@{/categories/save}" th:object="${category}" method="post">
+		<div class="form-group-row">
+			<div>
+				<label class="col-form-label">Category name:</label>
+				<input type="text" th:field="*{name}" class="form_control ml-3" required />
+			</div>
+			<div class="m-3">
+				<button type="submit" class="btn btn-primary">Save</button>
+			</div>
+		</div>
+	</form>
+	<a th:href="@{/goBack}">Click here to go to the main page</a>
+	</div>
+</body>
+</html>
